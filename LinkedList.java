@@ -26,6 +26,18 @@ public class LinkedList {
 		}
 	}
 
+	public void addNodeAtTheBeginning(int data) {
+        System.out.println("Add a node with data " + data + " in the beginning.");
+		Node newNode = new Node(data);
+
+		if (this.head == null) {
+			this.head = newNode;
+		}else {
+			newNode.nextNode = this.head;
+			this.head = newNode;
+		}
+	}
+	
 	public void displayData() {
 		Node current = head;
 		
@@ -40,6 +52,7 @@ public class LinkedList {
         }
         System.out.println();
 	}
+	
 	public static void main(String[] args) {
 		LinkedListDemo list = new LinkedListDemo();
 		list.addNode(56);
@@ -47,6 +60,5 @@ public class LinkedList {
 		list.addNode(70);
 		
 		list.displayData();
-
 	}
 }
